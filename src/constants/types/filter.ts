@@ -1,8 +1,9 @@
 interface Filter{
-    limit: number|undefined,
-    offset: number|undefined,
-    ids: string|undefined,
-    search: string|undefined
+    limit: number,
+    offset: number,
+    ids: string,
+    search: string,
+    order_by: string
 }
 
 export default Filter

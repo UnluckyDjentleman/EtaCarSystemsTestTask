@@ -12,14 +12,21 @@ export default function useCoins(filter: Filter){
     useEffect(()=>{
         setLoad("Loading...")
         CoinsAPI.GetCoins(filter).then(data=>{
-            console.log(data)
-            setCoins(data.data)
+            switch(filter.order_by){
+                case '':  setCoins(data.data); break;
+                case 'pricedesc': setCoins(data.data.sort((a,b)=>a.priceUsd-b.priceUsd)); break;
+                case 'priceasc': setCoins(data.data.sort((a,b)=>b.priceUsd-a.priceUsd)); break;
+                case 'changedesc': setCoins(data.data.sort((a,b)=>a.changePercent24Hr-b.changePercent24Hr)); break;
+                case 'changeasc': setCoins(data.data.sort((a,b)=>b.changePercent24Hr-a.changePercent24Hr)); break;
+                case 'marketcapdesc': setCoins(data.data.sort((a,b)=>a.marketCapUsd-b.marketCapUsd)); break;
+                case 'marketcapasc': setCoins(data.data.sort((a,b)=>b.marketCapUsd-a.marketCapUsd)); break;
+            }
             setLoad(true)
         }).catch(error=>{
             setError(error);
             setLoad(false);
         })
-    },[filter.limit, filter.offset, filter.search, filter.ids])
+    },[filter.offset, filter.search, filter.order_by])
 
     return {error, coins, load}
 }
