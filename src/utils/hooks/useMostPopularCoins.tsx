@@ -1,6 +1,6 @@
-import Assets from "../constants/types/assets";
+import Assets from "../../constants/types/assets";
 import { AxiosError } from "axios";
-import CoinsAPI from "../utils/api";
+import CoinsAPI from "../api";
 import { useEffect, useState } from "react";
 
 export default function useMostPopularCoins(){
@@ -12,7 +12,7 @@ export default function useMostPopularCoins(){
         setLoad("Loading...")
         CoinsAPI.GetMostPopularCoins().then(data=>{
             console.log(data)
-            setPopularCoins(data.data)
+            setPopularCoins(data.data as Assets[])
             setLoad(true)
         }).catch(error=>{
             setError(error);

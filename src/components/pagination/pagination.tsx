@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAppDispatch } from "../../hooks/useRedux";
+import { useAppDispatch } from "../../utils/hooks/useRedux";
 import { setPage } from "../../store/reducers/filterReducer";
 
 export default function Pagination({limit, offset, setOffset, length}:

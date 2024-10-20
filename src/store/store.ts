@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
 import filterReducer from './reducers/filterReducer';
+import filterHistoryReducer from './reducers/filterHistoryReducer';
 
 export const store=configureStore({
     reducer:{
         filter: filterReducer,
+        filterHistory: filterHistoryReducer
     }
 });
 

@@ -1,5 +1,5 @@
 import { useCallback} from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "../../utils/hooks/useRedux";
 import { setSearch } from "../../store/reducers/filterReducer";
 
 export default function Input(){

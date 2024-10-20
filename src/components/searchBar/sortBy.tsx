@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { options } from "../../constants/options"
-import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
+import { useAppDispatch, useAppSelector } from "../../utils/hooks/useRedux"
 import { setOrderBy } from "../../store/reducers/filterReducer";
 export default function SortBy(){
     const dispatch=useAppDispatch();

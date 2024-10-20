@@ -13,11 +13,6 @@ export const filterReducer=createSlice({
     name: 'filter',
     initialState,
     reducers:{
-        setFilter:(state, action: PayloadAction<Filter>)=>{
-            state.offset=action.payload.offset,
-            state.search=action.payload.search,
-            state.order_by=action.payload.order_by
-        },
         setPage:(state, action: PayloadAction<number>)=>{
             state.offset=action.payload
         },
@@ -30,6 +25,6 @@ export const filterReducer=createSlice({
     }
 })
 
-export const {setFilter, setPage, setSearch, setOrderBy} = filterReducer.actions
+export const {setPage, setSearch, setOrderBy} = filterReducer.actions
 
 export default filterReducer.reducer; 

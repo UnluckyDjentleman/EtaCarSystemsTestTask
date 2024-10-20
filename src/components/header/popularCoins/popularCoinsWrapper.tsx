@@ -1,12 +1,12 @@
 import Assets from "../../../constants/types/assets";
-import useMostPopularCoins from "../../../hooks/useMostPopularCoins";
+import useMostPopularCoins from "../../../utils/hooks/useMostPopularCoins";
 import PopularCoinItem from "./popularCoinItem";
 
 export default function PopularCoinsWrapper(){
     const resultPopular=useMostPopularCoins();
 
     return(
-        <div className="flex flex-wrap space-x-4 justify-center">
+        <div className="flex space-x-4">
             {
                 resultPopular.popularCoins&&(
                     (resultPopular.popularCoins as Assets[]).map(el=>(
