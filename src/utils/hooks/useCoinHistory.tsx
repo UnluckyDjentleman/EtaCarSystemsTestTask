@@ -12,9 +12,12 @@ export default function useCoinHistory(id: string, filterHistory: FilterHistory)
 
     useEffect(()=>{
         setLoad("Loading...");
-        CoinsAPI.GetCoinHistoryById(id,filterHistory).then(data=>{
-            console.log(data.data);
-            setHistory(data.data.map((el:DataAssetsHistory)=>({...el, time: new Date(el.time).getHours().toString()+":"+(new Date(el.time).getMinutes()===0?"00":new Date(el.time).getMinutes())})))
+        CoinsAPI.GetCoinHistoryById(id,filterHistory).then(data=>{           
+            setHistory(data.data.map((el:DataAssetsHistory)=>(
+                {...el, 
+                    time: new Date(el.time).getHours().toString()+":"+(new Date(el.time).getMinutes()===0?"00":new Date(el.time).getMinutes())
+                })
+            ))
             setLoad(true)
         }).catch(err=>{
             setError(err);

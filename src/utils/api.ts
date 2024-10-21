@@ -32,7 +32,8 @@ export default class CoinsAPI{
         const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets/'+id+"/history",{
             params:{
                 interval: filterHistory.interval,
-                start: filterHistory
+                start: filterHistory.start,
+                end: filterHistory.end
             }
         })
         return resp.data;

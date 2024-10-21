@@ -1,11 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import FilterHistory from '../../constants/types/filterHistory'
+import { HistoryParams } from '../../constants/historyParams'
 
-const initialState: FilterHistory={
-    interval: "h6",
-    start:  Date.now() - 24 * 60 * 60 * 1000,
-    end: Date.now(),
-}
+const initialState: FilterHistory=HistoryParams[0].historyParams;
 
 export const filterHistoryReducer=createSlice({
     name: 'filterHistory',
