@@ -26,8 +26,8 @@ export default function CoinDescription({item}:{item:Assets}){
             </div>
 
             <div className='min-w-[75%] flex flex-row justify-between gap-2'>
-                <button className="" onClick={()=>viewCoinAddModal(item)}>Add</button>
-                <button className="" onClick={clickBack}>Back</button>
+                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={()=>viewCoinAddModal(item)}>Add</button>
+                <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" onClick={clickBack}>Back</button>
             </div>
 
             <div className='w-full flex flex-col items-center gap-6'>

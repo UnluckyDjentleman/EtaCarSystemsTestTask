@@ -6,12 +6,12 @@ export default function Table({items}:{items: Assets[]}){
         <table className="w-full">
           <thead>
             <tr>
-              <td>Logo</td>
-              <td className="hidden sm:table-cell">Symbol</td>
-              <td className="hidden sm:table-cell">Price</td>
-              <td>Market cap</td>
-              <td>Change</td>
-              <td>Add</td>
+              <th>Logo</th>
+              <th className="hidden sm:table-cell">Symbol</th>
+              <th>Price</th>
+              <th className="hidden sm:table-cell">Market cap</th>
+              <th>Change</th>
+              <th>Add</th>
             </tr>
           </thead>
           <tbody>

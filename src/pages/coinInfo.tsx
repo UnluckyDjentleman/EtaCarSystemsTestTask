@@ -33,7 +33,7 @@ export default function CoinInfo(){
                     <div className='py-4 px-1 w-full md:w-[470px]'>
                         <ResponsiveContainer width="100%" height={300}>
                             <LineChart data={coinHistory.history}>
-                                    <Line type='monotone' dataKey='priceUsd' stroke='#f4bbd5' />
+                                    <Line type='monotone' dataKey='priceUsd' stroke='#3B82F6' />
                                     <CartesianGrid stroke='#ccc' />
                                     <XAxis className='text-xs sm:text-lg lg:text-xl' dataKey='time'/>
                                     <YAxis className='text-xs sm:text-lg lg:text-xl' />
