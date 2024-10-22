@@ -20,16 +20,16 @@ export default function TableRaw({item}:{item:Assets}){
             <td className="hidden sm:table-cell px-4 py-6">
             <span>{item.symbol}</span>
             </td>
-            <td className="hidden sm:table-cell px-4 py-6">
+            <td className="sm:table-cell px-4 py-6">
             <span>{item.priceUsd}$</span>
             </td>
-            <td className="hidden sm:table-cell px-4 py-6">
+            <td className="sm:table-cell px-4 py-6">
             <span>{parseFloat(item.marketCapUsd??0).toFixed(2)}$</span>
             </td>
-            <td className="hidden sm:table-cell px-4 py-6">
+            <td className="sm:table-cell px-4 py-6">
             <span className={parseFloat(item.changePercent24Hr??0)<0?"text-red-500":"text-green-500"}>{(parseFloat(item.changePercent24Hr??0)??0).toFixed(2)}%</span>
             </td>
-            <td className="hidden sm:table-cell px-4 py-6">
+            <td className="sm:table-cell px-4 py-6">
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={e=>{
                 e.stopPropagation();
                 console.log(item);
