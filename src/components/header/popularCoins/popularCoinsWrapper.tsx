@@ -11,6 +11,7 @@ export default function PopularCoinsWrapper(){
                 resultPopular.popularCoins&&(
                     (resultPopular.popularCoins as Assets[]).map(el=>(
                         <PopularCoinItem 
+                            id={el.id}
                             image={`https://s2.coinmarketcap.com/static/img/coins/64x64/${el.rank}.png`}
                             name={el.name}
                             symbol={el.symbol}

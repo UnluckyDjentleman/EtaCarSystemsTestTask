@@ -1,7 +1,14 @@
-export default function PopularCoinItem({image, name, symbol, price}:{image: string, name: string, symbol: string, price: number}){
+import { useCallback } from "react";
+import { useNavigate } from "react-router"
+
+export default function PopularCoinItem({id, image, name, symbol, price}:{id: string, image: string, name: string, symbol: string, price: number}){
+    const navigate=useNavigate();
+    const click=useCallback((x: string)=>{
+        navigate('/coin/'+x);
+    },[])
     return(
-        <div className="flex border-gray-400 lg:border-gray-400 bg-white rounded p-3 flex-col justify-between mt-6 mb-6">
-                <div className="flex justify-center space-x-1">
+        <div className="rounded-lg bg-white shadow-md flex flex-col gap-1 items-start px-3 py-2" onClick={()=>click(id)}>
+                <div className="flex flex-row items-center gap-2">
                     <div className="flex bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden items-center">
                         <img src={image} style={{height: '20px', width: '20px'}}/>
                     </div>

@@ -2,10 +2,11 @@ import axios from "axios";
 import Filter from "../constants/types/filter";
 import DataAssets from "../constants/types/dataAssets";
 import FilterHistory from "../constants/types/filterHistory";
-import DataAssetsHistory from "../constants/types/dataAssetsHistory";
+import DataAssetsArray from "../constants/types/dataAssetsArray";
+import DataAssetsHistoryArray from "../constants/types/dataAssetsHistoryArray";
 
 export default class CoinsAPI{
-    public static async GetCoins(filter: Filter):Promise<DataAssets>{
+    public static async GetCoins(filter: Filter):Promise<DataAssetsArray>{
         const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets',{
             params:{
                 limit: filter.limit,
@@ -16,7 +17,7 @@ export default class CoinsAPI{
         });
         return resp.data;
     }
-    public static async GetMostPopularCoins():Promise<DataAssets>{
+    public static async GetMostPopularCoins():Promise<DataAssetsArray>{
         const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets',{
             params:{
                 limit: 3
@@ -28,7 +29,15 @@ export default class CoinsAPI{
         const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets/'+id);
         return resp.data;
     }
-    public static async GetCoinHistoryById(id: string, filterHistory: FilterHistory):Promise<DataAssetsHistory[]>{
+    public static async GetCoinsByIds(ids: string[]):Promise<DataAssetsArray>{
+        const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets',{
+            params:{
+                ids: ids.join(",")
+            }
+        });
+        return resp.data;
+    }
+    public static async GetCoinHistoryById(id: string, filterHistory: FilterHistory):Promise<DataAssetsHistoryArray>{
         const resp=await axios.get(import.meta.env.VITE_API_COINS_URL+'/assets/'+id+"/history",{
             params:{
                 interval: filterHistory.interval,

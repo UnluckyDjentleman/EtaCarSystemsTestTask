@@ -1,7 +1,7 @@
 import Assets from "./assets";
 
 interface DataAssets{
-    data: Assets[]|Assets
+    data: Assets
 }
 
 export default DataAssets
