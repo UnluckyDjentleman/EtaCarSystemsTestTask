@@ -1,8 +1,7 @@
-import { createContext, ReactNode, useMemo, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import Assets from "../../../constants/types/assets";
 import ModalAdd from "../modalAdd";
 import ModalPortfolio from "../modalPortfolio";
-import {ModalTemplate} from "../components/modalTemplate";
 import { createPortal } from "react-dom";
 
 const initialState={

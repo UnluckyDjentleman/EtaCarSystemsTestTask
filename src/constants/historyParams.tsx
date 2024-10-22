@@ -4,7 +4,7 @@ export const HistoryParams:FilterHistoryOptions[]=[
     {
         historyParams:{
             interval: 'h6',
-            start: Date.now()-24*60*60*1000,
+            start: Date.now()-(24*60*60*1000),
             end: Date.now(),
         },
         option: 'Day'
@@ -12,7 +12,7 @@ export const HistoryParams:FilterHistoryOptions[]=[
     {
         historyParams:{
             interval: 'h2',
-            start: Date.now()-12*60*60*1000,
+            start: Date.now()-(12*60*60*1000),
             end: Date.now()
         },
         option: '12 Hours'
@@ -21,7 +21,7 @@ export const HistoryParams:FilterHistoryOptions[]=[
         historyParams:
         {
             interval: 'm15',
-            start: Date.now()-60*60*1000,
+            start: Date.now()-(60*60*1000),
             end: Date.now(),
         },
         option: 'Hour'

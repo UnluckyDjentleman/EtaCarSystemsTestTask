@@ -17,7 +17,7 @@ export default function useCoin(id: string){
             setError(error);
             setLoad(false);
         })
-    },[])
+    },[id])
 
     return {error, coin, load}
 }

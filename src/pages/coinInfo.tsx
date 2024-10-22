@@ -2,18 +2,20 @@ import useCoin from "../utils/hooks/useCoin";
 import { useAppSelector } from "../utils/hooks/useRedux";
 import useCoinHistory from "../utils/hooks/useCoinHistory";
 import Loader from "../components/loader/loader";
-import { LineChart, YAxis, XAxis, Line, CartesianGrid, Tooltip } from "recharts";
+import { LineChart, YAxis, XAxis, Line, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import SelectHistory from "../components/history/selectHistory";
 import Assets from "../constants/types/assets";
 import CoinDescription from "../components/info/coinInfo";
+import { useLocation } from "react-router";
 
 export default function CoinInfo(){
     const filterHistory=useAppSelector(state=>state.filterHistory)
-    const hrefs=window.location.pathname.split("/");
-    const id=hrefs[hrefs.length-1];
+    const { state: coin } = useLocation();
 
-    const result=useCoin(id);
-    const coinHistory=useCoinHistory(id,filterHistory)
+    console.log(coin.id);
+    const result=useCoin(coin.id);
+    console.log(result);
+    const coinHistory=useCoinHistory(coin.id,filterHistory)
 
     return(
         <>
@@ -24,19 +26,21 @@ export default function CoinInfo(){
         }
         {
             (result.load===true)&&(
-                <div className="container mx-auto px-2 md:px-0">
-                    <div className='py-4 px-1 md:px-3 w-full md:w-[470px] rounded-b-xl shadow-xl'>
-                        <div className="flex flex-col items-start gap-2 sm:gap-4">
+                <div className="container mx-auto">
+                    <div className='py-4 px-1 w-full md:w-[470px]'>
                             <CoinDescription item={result.coin as Assets}/>
-                            <LineChart width={500} height={300} className='mx-auto' data={coinHistory.history}>
-                                <Line type='monotone' dataKey='priceUsd' stroke='#8884d8' />
-                                <CartesianGrid stroke='#ccc' />
-                                <XAxis className='text-xs sm:text-lg lg:text-xl' dataKey='time'/>
-                                <YAxis className='text-xs sm:text-lg lg:text-xl' />
-                                <Tooltip />
+                    </div>
+                    <div className='py-4 px-1 w-full md:w-[470px]'>
+                        <ResponsiveContainer width="100%" height={300}>
+                            <LineChart data={coinHistory.history}>
+                                    <Line type='monotone' dataKey='priceUsd' stroke='#f4bbd5' />
+                                    <CartesianGrid stroke='#ccc' />
+                                    <XAxis className='text-xs sm:text-lg lg:text-xl' dataKey='time'/>
+                                    <YAxis className='text-xs sm:text-lg lg:text-xl' />
+                                    <Tooltip />
                             </LineChart>
-                            <SelectHistory histories={filterHistory}></SelectHistory>
-                        </div>
+                        </ResponsiveContainer>
+                        <SelectHistory histories={filterHistory}></SelectHistory>
                     </div>
                 </div>
             )

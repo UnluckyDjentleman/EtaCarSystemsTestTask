@@ -15,7 +15,7 @@ export default function Input(){
             type="text"
             value={search} 
             onChange={e=>setSearchString(e.currentTarget.value)} 
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            className="grow w-full md:mr-8 rounded-xl px-4 py-2 outline-none border" 
             placeholder={'Enter coin name'}/>
         </>
     )

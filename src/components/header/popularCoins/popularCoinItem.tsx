@@ -1,23 +1,20 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router"
-
-export default function PopularCoinItem({id, image, name, symbol, price}:{id: string, image: string, name: string, symbol: string, price: number}){
-    const navigate=useNavigate();
-    const click=useCallback((x: string)=>{
-        navigate('/coin/'+x);
-    },[])
+import Assets from "../../../constants/types/assets";
+import { Link } from "react-router-dom";
+export default function PopularCoinItem({item}:{item:Assets}){
     return(
-        <div className="rounded-lg bg-white shadow-md flex flex-col gap-1 items-start px-3 py-2" onClick={()=>click(id)}>
+        <Link to={`/coin/${item.id}`} state={item}>
+            <div className="rounded-lg bg-white shadow-md flex flex-col gap-1 items-start px-3 py-2">
                 <div className="flex flex-row items-center gap-2">
                     <div className="flex bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden items-center">
-                        <img src={image} style={{height: '20px', width: '20px'}}/>
+                        <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.rank}.png`} style={{height: '20px', width: '20px'}}/>
                     </div>
-                    <div className="text-gray-900 font-bold text-xl items-center">{name}</div>
+                    <div className="text-gray-900 font-bold text-xl items-center">{item.name}</div>
                 </div>
                 <div className="text-xs text-gray-600 items-center">
-                    {symbol}
+                    {item.symbol}
                 </div>
-                <p className="text-gray-700 text-base font-semibold">{price}$</p>
-        </div>
+                <p className="text-gray-700 text-base font-semibold">{item.priceUsd}$</p>
+            </div>
+        </Link>
     )
 }

@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router";
 import Assets from "../../constants/types/assets";
+import { ModalContext } from "../modals/context/modal.context";
+import { useContext } from "react";
 
 export default function CoinDescription({item}:{item:Assets}){
+    const {viewCoinAddModal}=useContext(ModalContext)
     const navigate=useNavigate();
     const clickBack=()=>{
         navigate("/");
@@ -23,35 +26,35 @@ export default function CoinDescription({item}:{item:Assets}){
             </div>
 
             <div className='min-w-[75%] flex flex-row justify-between gap-2'>
-                <button content='Add'  className=""/>
-                <button content='Back' className="" onClick={clickBack}/>
+                <button className="" onClick={()=>viewCoinAddModal(item)}>Add</button>
+                <button className="" onClick={clickBack}>Back</button>
             </div>
 
-            <div className='w-full flex flex-col items-center gap-4'>
-                <div className='w-full flex flex-row justify-between items-center py-2 border-b-2 border-gray-400'>
+            <div className='w-full flex flex-col items-center gap-6'>
+                <div className='w-full flex flex-row justify-between items-center py-2'>
                     <span className='text-lg text-gray-600'>Change</span>
-                    <span className='text-lg font-bold'>{
+                    <span className='text-lg'>{
                         parseFloat(item.changePercent24Hr??"0").toFixed(2)
                     }%
                     </span>
                 </div>
-                <div className='w-full flex flex-row justify-between items-center py-2 border-b-2 border-gray-400'>
+                <div className='w-full flex flex-row justify-between items-center py-2'>
                     <span className='text-lg text-gray-600'>Supply</span>
-                    <span className='text-lg font-bold'>{
+                    <span className='text-lg'>{
                         parseFloat(item.supply??"0").toFixed(2)
                     }%
                     </span>
                 </div>
-                <div className='w-full flex flex-row justify-between items-center py-2 border-b-2 border-gray-400'>
+                <div className='w-full flex flex-row justify-between items-center py-2'>
                     <span className='text-lg text-gray-600'>Max supply</span>
-                    <span className='text-lg font-bold'>{
+                    <span className='text-lg'>{
                         parseFloat(item.maxSupply??"0").toFixed(2)
                     }%
                     </span>
                 </div>
-                <div className='w-full flex flex-row justify-between items-center py-2 border-b-2 border-gray-400'>
+                <div className='w-full flex flex-row justify-between items-center py-2'>
                     <span className='text-lg text-gray-600'>Market Cap</span>
-                    <span className='text-lg font-bold'>{
+                    <span className='text-lg'>{
                         parseFloat(item.marketCapUsd??"0").toFixed(2)
                     }%
                     </span>

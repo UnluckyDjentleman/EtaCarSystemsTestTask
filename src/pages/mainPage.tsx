@@ -36,7 +36,7 @@ function MainPage() {
 
   return (
     <>
-      <div className="container mx-auto px-2 md:px-0">
+      <div className="w-full flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center py-2">
         <Input/>
         <SortBy/>
       </div>

@@ -9,7 +9,9 @@ export const filterHistoryReducer=createSlice({
     initialState,
     reducers:{
         setInterval:(state, action: PayloadAction<FilterHistory>)=>{
-            state.interval=action.payload.interval
+            state.interval=action.payload.interval,
+            state.start=action.payload.start,
+            state.end=action.payload.end
         }
     }
 })

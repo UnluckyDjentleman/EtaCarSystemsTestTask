@@ -1,21 +1,14 @@
 import Assets from "../../../constants/types/assets";
-import useMostPopularCoins from "../../../utils/hooks/useMostPopularCoins";
 import PopularCoinItem from "./popularCoinItem";
 
-export default function PopularCoinsWrapper(){
-    const resultPopular=useMostPopularCoins();
+export default function PopularCoinsWrapper({items}:{items:Assets[]}){
 
     return(
-        <div className="flex space-x-4">
+        <div className="scroll flex flex-row justify-start items-center gap-12 py-2 w-2/3 lg:w-3/4 xl:w-4/5 overflow-x-auto scroll-p-3">
             {
-                resultPopular.popularCoins&&(
-                    (resultPopular.popularCoins as Assets[]).map(el=>(
-                        <PopularCoinItem 
-                            id={el.id}
-                            image={`https://s2.coinmarketcap.com/static/img/coins/64x64/${el.rank}.png`}
-                            name={el.name}
-                            symbol={el.symbol}
-                            price={parseFloat(el.priceUsd)}/>
+                items&&(
+                    (items as Assets[]).map(el=>(
+                        <PopularCoinItem item={el}/>
                     ))
                 )
             }
