@@ -8,7 +8,7 @@ export default function Table({items}:{items: Assets[]}){
             <tr>
               <td>Logo</td>
               <td className="hidden sm:table-cell">Symbol</td>
-              <td>Price</td>
+              <td className="hidden sm:table-cell">Price</td>
               <td>Market cap</td>
               <td>Change</td>
               <td>Add</td>

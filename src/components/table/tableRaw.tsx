@@ -20,7 +20,7 @@ export default function TableRaw({item}:{item:Assets}){
             <td className="hidden sm:table-cell px-4 py-6">
             <span>{item.symbol}</span>
             </td>
-            <td className="sm:table-cell px-4 py-6">
+            <td className="hidden sm:table-cell px-4 py-6">
             <span>{item.priceUsd}$</span>
             </td>
             <td className="sm:table-cell px-4 py-6">
