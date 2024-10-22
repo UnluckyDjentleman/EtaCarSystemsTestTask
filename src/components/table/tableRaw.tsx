@@ -21,7 +21,7 @@ export default function TableRaw({item}:{item:Assets}){
             <span>{item.symbol}</span>
             </td>
             <td className="sm:table-cell px-4 py-6">
-            <span>{item.priceUsd}$</span>
+            <span>{parseFloat(item.priceUsd).toFixed(2)}$</span>
             </td>
             <td className="hidden sm:table-cell px-4 py-6">
             <span>{parseFloat(item.marketCapUsd??0).toFixed(2)}$</span>
