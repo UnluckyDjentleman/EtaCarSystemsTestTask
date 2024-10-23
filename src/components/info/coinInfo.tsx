@@ -12,6 +12,9 @@ export default function CoinDescription({item}:{item:Assets}){
     return(
         <div className='flex flex-col items-start gap-2 sm:gap-4'>
             <div className='flex flex-row items-center gap-2'>
+                <div className="flex bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden items-center">
+                    <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.rank}.png`} style={{height: '20px', width: '20px'}}/>
+                </div>
                 <span className='font-bold text-lg'>{item.name}</span>
                 <span className='text-gray-500'>{item.symbol}</span>
             </div>

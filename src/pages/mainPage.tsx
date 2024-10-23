@@ -8,6 +8,7 @@ import Input from '../components/searchBar/input';
 import SortBy from '../components/searchBar/sortBy';
 import Loader from '../components/loader/loader';
 import Table from '../components/table/table';
+import ErrorMessage from '../components/error/error';
 
 function MainPage() {
   const coinFilter=useAppSelector(state=>state.filter)
@@ -55,7 +56,7 @@ function MainPage() {
       }
       {
         result.error&&(
-          <h2>{result.error.message}</h2>
+          <ErrorMessage message={result.error.message}/>
         )
       }
     </>
