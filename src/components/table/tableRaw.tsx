@@ -17,6 +17,9 @@ export default function TableRaw({item}:{item:Assets}){
                 <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.rank}.png`} />
             </div>
             </td>
+            <td className="hidden xl:table-cell px-4 py-6">
+            <span>{item.name}</span>
+            </td>
             <td className="hidden sm:table-cell px-4 py-6">
             <span>{item.symbol}</span>
             </td>

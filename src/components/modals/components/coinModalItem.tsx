@@ -1,5 +1,5 @@
 import AddPortfolio from "../../../constants/types/addPortfolio";
-import { removeCoin } from "../../../store/reducers/portfolioReducer";
+import { removeCoinFromPortfolio } from "../../../store/reducers/portfolioReducer";
 import { useAppDispatch } from "../../../utils/hooks/useRedux";
 
 export default function CoinModalItem({item}:{item: AddPortfolio}){
@@ -8,11 +8,11 @@ export default function CoinModalItem({item}:{item: AddPortfolio}){
         <li className='flex flex-row justify-between items-center px-4 py-6 border-y-1'>
             <div className='flex flex-row items-center gap-2'>
                 <span className='text-lg'>{`${item.asset.name} x${item.count}`}</span>
-                <span className='text-lg font-bold'>{`$${parseFloat(item.asset.priceUsd).toFixed(2)}`}</span>
+                <span className='text-lg'>{`$${parseFloat(item.asset.priceUsd).toFixed(2)}`}</span>
             </div>
 
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-            onClick={()=>dispatch(removeCoin(item.asset))}>
+            onClick={()=>dispatch(removeCoinFromPortfolio(item.asset))}>
                 Delete
             </button>
         </li>

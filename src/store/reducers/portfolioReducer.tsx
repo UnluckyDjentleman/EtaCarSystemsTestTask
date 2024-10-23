@@ -23,7 +23,7 @@ export const portfolioReducer=createSlice({
     name: 'portfolio',
     initialState: stateInitialize,
     reducers:{
-        addCoin: (state, action: PayloadAction<AddPortfolio>)=>{
+        addCoinToPortfolio: (state, action: PayloadAction<AddPortfolio>)=>{
             const existingCoin=state.coins.find(el=>el.asset.id===action.payload.asset.id);
             if(existingCoin){
                 existingCoin.count+=action.payload.count
@@ -34,7 +34,7 @@ export const portfolioReducer=createSlice({
             state.summary+=(+action.payload.asset.priceUsd)*action.payload.count;
             localStorage.setItem(LOCALSTORAGE_KEY_PORTFOLIO, JSON.stringify(state.coins))
         },
-        removeCoin: (state, action: PayloadAction<Assets>)=>{
+        removeCoinFromPortfolio: (state, action: PayloadAction<Assets>)=>{
             const coin=state.coins.find(el=>el.asset.id===action.payload.id);
             if(coin){
                 state.coins=state.coins.filter(el=>el.asset.id!==coin.asset.id)
@@ -45,6 +45,6 @@ export const portfolioReducer=createSlice({
     }
 })
 
-export const {addCoin, removeCoin} = portfolioReducer.actions
+export const {addCoinToPortfolio, removeCoinFromPortfolio} = portfolioReducer.actions
 
 export default portfolioReducer.reducer;

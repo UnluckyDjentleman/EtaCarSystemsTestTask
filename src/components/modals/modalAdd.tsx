@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Assets from "../../constants/types/assets";
 import { useAppDispatch } from "../../utils/hooks/useRedux";
-import { addCoin } from "../../store/reducers/portfolioReducer";
+import { addCoinToPortfolio } from "../../store/reducers/portfolioReducer";
 import { ModalContext } from "./context/modal.context";
 export default function ModalAdd({coin}:{coin:Assets}){
     const [count, setCount]=useState<number>(1);
@@ -9,7 +9,7 @@ export default function ModalAdd({coin}:{coin:Assets}){
     const dispatch=useAppDispatch();
     function submitBuying(e:React.MouseEvent<HTMLFormElement>){
         e.preventDefault();
-        dispatch(addCoin({asset: coin, count: count}))
+        dispatch(addCoinToPortfolio({asset: coin, count: count}))
     }
 
     return(
@@ -18,8 +18,8 @@ export default function ModalAdd({coin}:{coin:Assets}){
                 className='fixed top-0 left-0 w-screen h-screen z-40 bg-black opacity-60'
                 onClick={() => closeModal()}
         ></div>
-        <div data-testid='modal'
-        className='fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white'>
+        <div
+        className='fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white' data-testid='modal-add'>
             <div className='w-[300px] sm:w-[400px] px-6 py-8'>
                 <div className='flex flex-row items-center gap-2'>
                     <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.rank}.png`} style={{height: '20px', width: '20px'}} />
@@ -38,6 +38,7 @@ export default function ModalAdd({coin}:{coin:Assets}){
                     <div className='mb-4'>
                         <input
                             type='number'
+                            data-testid="input"
                             min={1}
                             max={50}
                             value={count}

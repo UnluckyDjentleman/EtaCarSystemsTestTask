@@ -13,6 +13,7 @@ export default function Input(){
         <>
             <input 
             type="text"
+            data-testid='search'
             value={search} 
             onChange={e=>setSearchString(e.currentTarget.value)} 
             className="grow w-full md:mr-8 rounded-xl px-4 py-2 outline-none border" 

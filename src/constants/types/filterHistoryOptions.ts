@@ -1,7 +1,7 @@
 import FilterHistory from "./filterHistory";
 
 interface FilterHistoryOptions{
-    historyParams: FilterHistory,
+    value: FilterHistory,
     option: string
 }
 

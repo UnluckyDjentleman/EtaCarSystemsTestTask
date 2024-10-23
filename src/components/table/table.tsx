@@ -7,6 +7,7 @@ export default function Table({items}:{items: Assets[]}){
           <thead>
             <tr>
               <th>Logo</th>
+              <th className="hidden xl:table-cell">Name</th>
               <th className="hidden sm:table-cell">Symbol</th>
               <th>Price</th>
               <th className="hidden sm:table-cell">Market cap</th>

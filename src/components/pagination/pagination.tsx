@@ -13,15 +13,12 @@ export default function Pagination({limit, offset, length}:
         dispatch(setPage(offset-limit));
       },[dispatch, offset]);
     return(
-        <div className="flex justify-between items-center w-10">
+        <div className="flex flex-wrap justify-between" data-testid="pg-block">
             {
-                (offset>0)&&(
-                    <button className={'relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500'} onClick={onClickPrev}>&#60;</button>
-                )
-            }{
-                length>0&&(
-                    <button className={'relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500'} onClick={onClickNext}>&#62;</button>
-                )
+                    <button className={`relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500`} onClick={onClickPrev} disabled={offset<=0}>Prev</button>
+            }
+            {
+                    <button className={`relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500`} onClick={onClickNext} disabled={length<=0}>Next</button>
             }
         </div>
     )

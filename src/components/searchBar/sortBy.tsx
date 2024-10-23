@@ -13,6 +13,7 @@ export default function SortBy(){
         <select
             className={"w-min rounded-md px-2 py-1 outline-none border"}
             onChange={(e)=>onSelect(e.currentTarget.value)}
+            data-testid='sort-option'
         >
             {
                 options.map(el=>(

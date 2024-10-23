@@ -11,7 +11,7 @@ import useDifference from "./hooks/useDifference";
     return (
         <div
             className='bg-purple-500 cursor-pointer min-h-[100%] px-3 py-2 flex flex-col justify-center items-start gap-2'
-            data-testid='portfolio-info'
+            data-testid='portfolio'
             onClick={()=>viewModalList()}
         >
             <span className='text-xs sm:text-lg lg:text-xl text-white'>{`${summary.toFixed(2)}`}</span>

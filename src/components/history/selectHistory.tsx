@@ -7,7 +7,7 @@ import FilterHistory from "../../constants/types/filterHistory";
 export default function SelectHistory({histories}:{histories: FilterHistory}){
     const dispatch=useAppDispatch();
     const onSelect=useCallback((x:string)=>{
-        dispatch(setInterval(HistoryParams.find(el => el.historyParams.interval === x)?.historyParams as FilterHistory));
+        dispatch(setInterval(HistoryParams.find(el => el.value.interval === x)?.value as FilterHistory));
     },[histories])
     return(
         <select
@@ -17,7 +17,7 @@ export default function SelectHistory({histories}:{histories: FilterHistory}){
             {
                 HistoryParams.map(el=>(
                     <option 
-                        value={el.historyParams.interval} 
+                        value={el.value.interval} 
                     >
                         {el.option}
                     </option>
