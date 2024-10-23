@@ -25,7 +25,6 @@ function MainPage() {
   const coinsList=useRef<{results: Assets[]}>({results: []})
 
   if (result.load === true) {
-    console.log(coinsList.current.results);
     coinsList.current.results = result.coins as Assets[];
   }
   else if (result.load === "Loading...") {
