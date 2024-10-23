@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import FilterHistory from '../../constants/types/filterHistory'
 import { HistoryParams } from '../../constants/historyParams'
 
-const initialState: FilterHistory=HistoryParams[0].historyParams;
+const initialState: FilterHistory=HistoryParams[0].value;
 
 export const filterHistoryReducer=createSlice({
     name: 'filterHistory',
