@@ -22,7 +22,7 @@ export default function useCoinHistory(id: string, filterHistory: FilterHistory)
             setError(err);
             setLoad(false);
         })
-    },[filterHistory])
+    },[filterHistory,id])
 
     return {load, history, error};
 }

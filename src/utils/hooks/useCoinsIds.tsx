@@ -17,7 +17,7 @@ export default function useCoinsByIds(ids: string[]){
             setError(error);
             setLoad(false);
         })
-    },[])
+    },[ids])
 
     return {error, coins, load}
 }

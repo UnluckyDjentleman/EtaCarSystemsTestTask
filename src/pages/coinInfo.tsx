@@ -16,6 +16,7 @@ export default function CoinInfo(){
     const { state: coin } = useLocation();
     const result=useCoin(coin!==null?coin.id:undefined);
     const coinHistory=useCoinHistory(coin!==null?coin.id:undefined,filterHistory)
+    console.log(coinHistory);
 
     return(
         <>
