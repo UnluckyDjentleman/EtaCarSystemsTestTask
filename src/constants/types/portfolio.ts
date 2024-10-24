@@ -1,8 +1,8 @@
 import AddPortfolio from "./addPortfolio";
 
-interface Portfolio{
-    coins: AddPortfolio[],
-    summary: number,
+interface Portfolio {
+  coins: AddPortfolio[];
+  summary: number;
 }
 
-export default Portfolio
+export default Portfolio;

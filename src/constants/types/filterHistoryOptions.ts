@@ -1,8 +1,8 @@
 import FilterHistory from "./filterHistory";
 
-interface FilterHistoryOptions{
-    value: FilterHistory,
-    option: string
+interface FilterHistoryOptions {
+  value: FilterHistory;
+  option: string;
 }
 
-export default FilterHistoryOptions
+export default FilterHistoryOptions;

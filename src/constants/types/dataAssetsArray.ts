@@ -1,7 +1,7 @@
 import Assets from "./assets";
 
-interface DataAssetsArray{
-    data: Assets[]
+interface DataAssetsArray {
+  data: Assets[];
 }
 
-export default DataAssetsArray
+export default DataAssetsArray;

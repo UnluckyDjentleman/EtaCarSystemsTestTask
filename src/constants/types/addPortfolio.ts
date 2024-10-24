@@ -1,8 +1,8 @@
-import Assets from "./assets"
+import Assets from "./assets";
 
-interface AddPortfolio{
-    asset: Assets,
-    count: number
+interface AddPortfolio {
+  asset: Assets;
+  count: number;
 }
 
-export default AddPortfolio
+export default AddPortfolio;

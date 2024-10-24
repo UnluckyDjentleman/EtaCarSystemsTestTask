@@ -1,7 +1,7 @@
 import DataAssetsHistory from "./dataAssetsHistory";
 
-interface DataAssetsHistoryArray{
-    data: DataAssetsHistory[]
+interface DataAssetsHistoryArray {
+  data: DataAssetsHistory[];
 }
 
-export default DataAssetsHistoryArray
+export default DataAssetsHistoryArray;

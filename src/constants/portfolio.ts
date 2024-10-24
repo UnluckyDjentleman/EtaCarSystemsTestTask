@@ -1,1 +1,1 @@
-export const LOCALSTORAGE_KEY_PORTFOLIO='portfolio'
+export const LOCALSTORAGE_KEY_PORTFOLIO = "portfolio";
