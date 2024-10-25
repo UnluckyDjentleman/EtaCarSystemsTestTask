@@ -41,7 +41,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const getModal = () => {
     switch (activeModal) {
       case "addCoin":
-        return <ModalAdd coin={activeCoin} />;
+        return <ModalAdd coin={activeCoin as Assets} />;
       case "coinList":
         return <ModalPortfolio />;
       default:
