@@ -19,7 +19,6 @@ export default function CoinInfo() {
     coin !== null ? coin.id : undefined,
     filterHistory,
   );
-  console.log(coinHistory);
 
   return (
     <>
