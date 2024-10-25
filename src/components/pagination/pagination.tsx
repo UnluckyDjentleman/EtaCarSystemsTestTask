@@ -1,6 +1,8 @@
 import { useCallback } from "react";
 import { useAppDispatch } from "../../utils/hooks/useRedux";
 import { setPage } from "../../store/reducers/filterReducer";
+import PaginationElement from "../shared/paginationElement";
+
 
 export default function Pagination({
   limit,
@@ -20,24 +22,16 @@ export default function Pagination({
     dispatch(setPage(offset - limit));
   }, [dispatch, offset]);
   return (
-    <div className="flex flex-wrap justify-between" data-testid="pg-block">
+    <div className="flex inline-flex mt-2 xs:mt-0 justify-center w-auto" data-testid="pg-block">
       {
-        <button
-          className={`relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500`}
-          onClick={onClickPrev}
-          disabled={offset <= 0}
-        >
-          Prev
-        </button>
+        offset>0&&(
+          <PaginationElement text='Prev' onClick={onClickPrev}/>
+        )
       }
       {
-        <button
-          className={`relative inline-flex items-center px-2 py-2 rounded-md border border-purple-500 bg-white text-sm font-medium text-gray-500 hover:bg-purple-500`}
-          onClick={onClickNext}
-          disabled={length <= 0}
-        >
-          Next
-        </button>
+        length>0&&(
+          <PaginationElement text='Next' onClick={onClickNext}/>
+        )
       }
     </div>
   );

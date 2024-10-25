@@ -1,7 +1,7 @@
 import useCoin from "../utils/hooks/useCoin";
 import { useAppSelector } from "../utils/hooks/useRedux";
 import useCoinHistory from "../utils/hooks/useCoinHistory";
-import Loader from "../components/loader/loader";
+import Loader from "../components/shared/loader";
 
 import SelectHistory from "../components/history/selectHistory";
 import Assets from "../constants/types/assets";

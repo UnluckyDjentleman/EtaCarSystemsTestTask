@@ -10,10 +10,6 @@ test.describe("Pagination", () => {
     const block = await page.getByTestId("pg-block");
     expect(block).toBeVisible();
 
-    //check that button on first page is disabled
-    const prevButton = block.getByRole("button", { name: "Prev" });
-    expect(prevButton).toHaveAttribute("disabled");
-
     //check pagination is working
     const firstPageValues: string[] = [];
     const nextPageValues: string[] = [];
@@ -24,8 +20,7 @@ test.describe("Pagination", () => {
       firstPageValues.push(name || "");
     }
 
-    const nextButton = block.getByRole("button", { name: "Next" });
-    await nextButton.click();
+    await page.locator("a#Next").click();
     rows = await page.locator("table tbody tr").all();
     for (const row of rows) {
       const nameCell = row.locator("td:nth-child(2)");

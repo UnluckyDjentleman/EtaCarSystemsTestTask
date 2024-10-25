@@ -49,7 +49,7 @@ export default function TableRaw({ item }: { item: Assets }) {
       </td>
       <td className="sm:table-cell px-4 py-6 align-center">
         <Button
-          innerText={'Add'}
+          innerText='Add'
           color='green'
           onClick={(e) => {
             e.stopPropagation();

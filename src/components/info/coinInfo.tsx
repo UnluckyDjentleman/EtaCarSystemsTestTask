@@ -40,7 +40,7 @@ export default function CoinDescription({ item }: { item: Assets }) {
         <Button
           onClick={()=>viewCoinAddModal(item)}
           color="green"
-          innerText="Back"/>
+          innerText="Add"/>
         <Button
           onClick={clickBack}
           color="purple"

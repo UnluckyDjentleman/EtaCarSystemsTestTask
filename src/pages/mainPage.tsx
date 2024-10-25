@@ -6,7 +6,7 @@ import { useAppSelector } from "../utils/hooks/useRedux";
 import Filter from "../constants/types/filter";
 import Input from "../components/searchBar/input";
 import SortBy from "../components/searchBar/sortBy";
-import Loader from "../components/loader/loader";
+import Loader from "../components/shared/loader";
 import Table from "../components/table/table";
 import ErrorMessage from "../components/error/error";
 
@@ -36,7 +36,7 @@ function MainPage() {
   }
 
   return (
-    <div className=" justify-center">
+    <div className="flex flex-col justify-center">
       <div className="w-auto flex md:flex-row gap-4 md:gap-0 justify-between items-center px-4 py-2">
         <Input />
         <SortBy />
