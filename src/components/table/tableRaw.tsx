@@ -17,26 +17,26 @@ export default function TableRaw({ item }: { item: Assets }) {
         "py-2 border-y-2 border-gray-200 hover:bg-blue-100 cursor-pointer"
       }
     >
-      <td className="sm:table-cell px-4 py-6">
+      <td className="sm:table-cell py-6 text-center mx-auto">
         <div className="flex w-10 h-10 col items-center">
           <img
             src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.rank}.png`}
           />
         </div>
       </td>
-      <td className="hidden xl:table-cell px-4 py-6 align-center">
+      <td className="hidden xl:table-cell px-4 py-6 text-center">
         <span>{item.name}</span>
       </td>
-      <td className="hidden sm:table-cell px-4 py-6 align-center">
+      <td className="hidden sm:table-cell px-4 py-6 text-center">
         <span>{item.symbol}</span>
       </td>
-      <td className="sm:table-cell px-4 py-6 align-center">
-        <span>{parseFloat(item.priceUsd).toFixed(2)}$</span>
+      <td className="sm:table-cell px-4 py-6 text-center">
+        <span>${item.priceUsd}</span>
       </td>
-      <td className="hidden sm:table-cell px-4 py-6 align-center">
-        <span>{parseFloat(item.marketCapUsd ?? 0).toFixed(2)}$</span>
+      <td className="hidden sm:table-cell px-4 py-6 text-center">
+        <span>${item.marketCapUsd}</span>
       </td>
-      <td className="sm:table-cell px-4 py-6 align-center">
+      <td className="sm:table-cell px-4 py-6 text-center">
         <span
           className={
             parseFloat(item.changePercent24Hr ?? 0) < 0
@@ -47,10 +47,10 @@ export default function TableRaw({ item }: { item: Assets }) {
           {(parseFloat(item.changePercent24Hr ?? 0) ?? 0).toFixed(2)}%
         </span>
       </td>
-      <td className="sm:table-cell px-4 py-6 align-center">
+      <td className="sm:table-cell px-4 py-6 text-center">
         <Button
           innerText='Add'
-          color='green'
+          color='#22c55e'
           onClick={(e) => {
             e.stopPropagation();
             console.log(item);

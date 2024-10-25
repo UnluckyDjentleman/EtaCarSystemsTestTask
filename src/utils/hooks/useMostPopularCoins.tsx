@@ -12,8 +12,7 @@ export default function useMostPopularCoins() {
     setLoad("Loading...");
     CoinsAPI.GetMostPopularCoins()
       .then((data) => {
-        console.log(data);
-        setPopularCoins(data.data as Assets[]);
+        setPopularCoins(data.data);
         setLoad(true);
       })
       .catch((error) => {

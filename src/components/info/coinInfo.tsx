@@ -39,11 +39,11 @@ export default function CoinDescription({ item }: { item: Assets }) {
       <div className="min-w-[75%] flex flex-row justify-between gap-2">
         <Button
           onClick={()=>viewCoinAddModal(item)}
-          color="green"
+          color="#22c55e"
           innerText="Add"/>
         <Button
           onClick={clickBack}
-          color="purple"
+          color="#a855f7"
           innerText="Back"/>
       </div>
 

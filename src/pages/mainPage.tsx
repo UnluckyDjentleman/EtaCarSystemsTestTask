@@ -36,21 +36,23 @@ function MainPage() {
   }
 
   return (
-    <div className="flex flex-col justify-center">
-      <div className="w-auto flex md:flex-row gap-4 md:gap-0 justify-between items-center px-4 py-2">
-        <Input />
-        <SortBy />
+    <div className="mx-auto">
+      <div className='container mx-auto md:px-0'>
+        <div className="w-auto flex md:flex-row gap-4 md:gap-0 justify-center px-4 py-2">
+          <Input />
+          <SortBy />
+        </div>
       </div>
       {result.load === "Loading..." && <Loader />}
       {result.load === true && (
-        <>
+        <section>
           <Table items={coinsList.current.results}></Table>
           <Pagination
             limit={defaultCoinFilter.current.limit}
             offset={coinFilter.offset}
             length={coinsList.current.results.length}
           ></Pagination>
-        </>
+        </section>
       )}
       {result.error && <ErrorMessage message={result.error.message} />}
     </div>

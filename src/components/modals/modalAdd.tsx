@@ -47,7 +47,7 @@ export default function ModalAdd({ coin }: { coin: Assets }) {
 
             <button
               type="submit"
-              className="bg-green-400 block mx-auto w-[200px] sm:w-[320px] rounded-lg px-4 py-2"
+              className="bg-blue-500 text-white block mx-auto w-[200px] sm:w-[320px] rounded-lg px-4 py-2"
             >
               Buy coin
             </button>

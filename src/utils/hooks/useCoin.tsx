@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Assets from "../../constants/types/assets";
 import { AxiosError } from "axios";
 import CoinsAPI from "../api";
+import { ApiValuesTransformer } from "../apiValuesTransformer";
 
 export default function useCoin(id: string) {
   const [coin, setCoin] = useState<Assets>();
@@ -12,7 +13,7 @@ export default function useCoin(id: string) {
     setLoad("Loading...");
     CoinsAPI.GetCoinById(id)
       .then((data) => {
-        setCoin(data.data as Assets);
+        setCoin(ApiValuesTransformer.fiterZeroValues(data.data));
         setLoad(true);
       })
       .catch((error) => {

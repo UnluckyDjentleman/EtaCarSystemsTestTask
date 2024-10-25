@@ -14,7 +14,7 @@ export default function CoinModalItem({ item }: { item: AddPortfolio }) {
 
       <Button
         innerText='Delete'
-        color='red'
+        color='#ef4444'
         onClick={() => dispatch(removeCoinFromPortfolio(item.asset))}
       />
     </li>

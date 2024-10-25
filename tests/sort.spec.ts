@@ -16,8 +16,16 @@ test.describe("Sort check", () => {
     const rows = page.locator("table tbody tr");
     for (const row of await rows.all()) {
       const cell = row.locator("td:nth-child(4)");
-      const value = await cell.textContent();
-      values.push(Number(value?.slice(0, -1)));
+      const cellValue = await cell.textContent();
+      let value=0;
+      switch(cellValue?.charAt(-1)){
+        case 'K': value=Number(cellValue.slice(1,-1))*1000; break;
+        case 'B': value=Number(cellValue.slice(1,-1))*1000000; break;
+        case 'M': value=Number(cellValue.slice(1,-1))*1000000000; break;
+        case 'T': value=Number(cellValue.slice(1,-1))*1000000000000; break;
+        default: value=Number(cellValue?.slice(1,-1)); break;
+      }
+      values.push(value);
     }
 
     for (let val = 0; val < values.length - 1; val++) {
@@ -33,8 +41,16 @@ test.describe("Sort check", () => {
     const rows = page.locator("table tbody tr");
     for (const row of await rows.all()) {
       const cell = row.locator("td:nth-child(4)");
-      const value = await cell.textContent();
-      values.push(Number(value?.slice(0, -1)));
+      const cellValue = await cell.textContent();
+      let value=0;
+      switch(cellValue?.charAt(-1)){
+        case 'K': value=Number(cellValue.slice(1,-1))*1000; break;
+        case 'B': value=Number(cellValue.slice(1,-1))*1000000; break;
+        case 'M': value=Number(cellValue.slice(1,-1))*1000000000; break;
+        case 'T': value=Number(cellValue.slice(1,-1))*1000000000000; break;
+        default: value=Number(cellValue?.slice(1,-1)); break;
+      }
+      values.push(value);
     }
 
     for (let val = 0; val < values.length - 1; val++) {
@@ -50,8 +66,16 @@ test.describe("Sort check", () => {
     const rows = page.locator("table tbody tr");
     for (const row of await rows.all()) {
       const cell = row.locator("td:nth-last-child(3)");
-      const value = await cell.textContent();
-      values.push(Number(value?.slice(0, -1)));
+      const cellValue = await cell.textContent();
+      let value=0;
+      switch(cellValue?.charAt(-1)){
+        case 'K': value=Number(cellValue.slice(1,-1))*1000; break;
+        case 'B': value=Number(cellValue.slice(1,-1))*1000000; break;
+        case 'M': value=Number(cellValue.slice(1,-1))*1000000000; break;
+        case 'T': value=Number(cellValue.slice(1,-1))*1000000000000; break;
+        default: value=Number(cellValue?.slice(1,-1)); break;
+      }
+      values.push(value);
     }
 
     for (let val = 0; val < values.length - 1; val++) {
@@ -67,8 +91,16 @@ test.describe("Sort check", () => {
     const rows = page.locator("table tbody tr");
     for (const row of await rows.all()) {
       const cell = row.locator("td:nth-last-child(3)");
-      const value = await cell.textContent();
-      values.push(Number(value?.slice(0, -1)));
+      const cellValue = await cell.textContent();
+      let value=0;
+      switch(cellValue?.charAt(-1)){
+        case 'K': value=Number(cellValue.slice(1,-1))*1000; break;
+        case 'B': value=Number(cellValue.slice(1,-1))*1000000; break;
+        case 'M': value=Number(cellValue.slice(1,-1))*1000000000; break;
+        case 'T': value=Number(cellValue.slice(1,-1))*1000000000000; break;
+        default: value=Number(cellValue?.slice(1,-1)); break;
+      }
+      values.push(value);
     }
 
     for (let val = 0; val < values.length - 1; val++) {

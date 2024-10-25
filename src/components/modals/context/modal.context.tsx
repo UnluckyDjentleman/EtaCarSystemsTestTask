@@ -18,7 +18,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [activeModal, setActiveModal] = useState<"addCoin" | "coinList" | null>(
     null,
   );
-  const [activeCoin, setActiveCoin] = useState<Assets | null>(null);
+  const [activeCoin, setActiveCoin] = useState<Assets>();
 
   const contextVal = {
     viewModalList: () => {
@@ -41,7 +41,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const getModal = () => {
     switch (activeModal) {
       case "addCoin":
-        return <ModalAdd coin={activeCoin as Assets} />;
+        return <ModalAdd coin={activeCoin} />;
       case "coinList":
         return <ModalPortfolio />;
       default:
