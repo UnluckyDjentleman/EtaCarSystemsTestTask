@@ -27,13 +27,15 @@ export default function CoinInfo() {
         <ErrorMessage message={result.error?.message as string} />
       )}
       {result.load === true && (
-        <div className="container mx-auto">
-          <div className="py-4 px-1 w-full md:w-[470px]">
-            <CoinDescription item={result.coin as Assets} />
-          </div>
-          <div className="py-4 px-1 w-full md:w-[470px]">
-            <HistoryChart data={coinHistory.history as DataAssetsHistory[]} />
-            <SelectHistory histories={filterHistory}></SelectHistory>
+        <div className="container mx-auto gap-1 xs:gap-0">
+          <div className="w-full flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center py-2">
+            <div className="py-4 px-1 mx-auto w-full md:w-[470px]">
+              <CoinDescription item={result.coin as Assets} />
+            </div>
+            <div className="py-4 px-1 mx-auto w-full md:w-[470px]">
+              <HistoryChart data={coinHistory.history as DataAssetsHistory[]} />
+              <SelectHistory histories={filterHistory}></SelectHistory>
+            </div>
           </div>
         </div>
       )}

@@ -36,7 +36,7 @@ export default function CoinDescription({ item }: { item: Assets }) {
         </span>
       </div>
 
-      <div className="min-w-[75%] flex flex-row justify-between gap-2">
+      <div className="min-w-[75%] mx-auto flex flex-row justify-between gap-2">
         <Button
           onClick={()=>viewCoinAddModal(item)}
           color="#22c55e"
