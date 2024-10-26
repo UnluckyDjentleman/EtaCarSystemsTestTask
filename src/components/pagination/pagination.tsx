@@ -33,7 +33,7 @@ export default function Pagination({
       <PaginationElement
         text="Next"
         onClick={onClickNext}
-        isAbled={length > 0}
+        isAbled={length===limit}
       />
     </div>
   );
