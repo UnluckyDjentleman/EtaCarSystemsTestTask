@@ -37,21 +37,27 @@ function MainPage() {
 
   return (
     <div className="mx-auto">
-      <div className='container mx-auto md:px-0'>
-        <div className="w-auto flex md:flex-row gap-4 md:gap-0 justify-center px-4 py-2">
-          <Input />
-          <SortBy />
+      <div className='container mx-auto px-2 md:px-0'>
+        <div className="w-full flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center py-2">
+          <div className={'w-min'}>
+            <Input />
+          </div>
+          <div className={'w-min'}>
+            <SortBy />
+          </div>
         </div>
       </div>
       {result.load === "Loading..." && <Loader />}
       {result.load === true && (
         <section>
-          <Table items={coinsList.current.results}></Table>
-          <Pagination
-            limit={defaultCoinFilter.current.limit}
-            offset={coinFilter.offset}
-            length={coinsList.current.results.length}
-          ></Pagination>
+          <div className="container mx-auto px-2 md:px-0">
+            <Table items={coinsList.current.results}></Table>
+            <Pagination
+              limit={defaultCoinFilter.current.limit}
+              offset={coinFilter.offset}
+              length={coinsList.current.results.length}
+            ></Pagination>
+          </div>
         </section>
       )}
       {result.error && <ErrorMessage message={result.error.message} />}

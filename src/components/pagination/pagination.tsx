@@ -22,7 +22,7 @@ export default function Pagination({
     dispatch(setPage(offset - limit));
   }, [dispatch, offset]);
   return (
-    <div className="max-w-[300px] mx-auto mt-6 mb-6 flex flex-row items-center justify-between" data-testid="pg-block">
+    <div className="max-w-[150px] mx-auto mt-6 mb-6 flex flex-row items-center justify-between" data-testid="pg-block">
           <PaginationElement text='Prev' onClick={onClickPrev} isAbled={offset>0}/>
           <PaginationElement text='Next' onClick={onClickNext} isAbled={length>0}/>
     </div>

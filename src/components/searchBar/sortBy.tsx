@@ -15,6 +15,7 @@ export default function SortBy() {
   return (
     <select
       className={"w-auto rounded-md px-2 py-1 outline-none border shadow-md"}
+      value={order_by}
       onChange={(e) => onSelect(e.currentTarget.value)}
       data-testid="sort-option"
     >

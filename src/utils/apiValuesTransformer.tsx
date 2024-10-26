@@ -21,7 +21,7 @@ export class ApiValuesTransformer{
     public static formatCost(data:Assets):Assets{
         //transform price
         const priceUsdLength=data.priceUsd.split('.')[0].length;
-        if(priceUsdLength<3){
+        if(priceUsdLength>=1&&priceUsdLength<3){
             data.priceUsd=Number(data.priceUsd).toFixed(2)
         }
         if(priceUsdLength>=3&&priceUsdLength<=5){
@@ -30,15 +30,12 @@ export class ApiValuesTransformer{
         else if(priceUsdLength>=6&&priceUsdLength<=8){
             data.priceUsd=(Number(data.priceUsd)/1000000).toFixed(2)+"M"
         }
-        else if(priceUsdLength>=9&&priceUsdLength<=11){
+        else if(priceUsdLength>=9){
             data.priceUsd=(Number(data.priceUsd)/1000000000).toFixed(2)+"B"
-        }
-        else{
-            data.priceUsd=(Number(data.priceUsd)/1000000000000).toFixed(2)+"T"
         }
         //transform marketCap
         const marketCapLength=data.marketCapUsd.split('.')[0].length;
-        if(marketCapLength<3){
+        if(marketCapLength>=1&&marketCapLength<3){
             data.marketCapUsd=Number(data.marketCapUsd).toFixed(2)
         }
         if(marketCapLength>=3&&marketCapLength<=5){
@@ -47,12 +44,10 @@ export class ApiValuesTransformer{
         else if(marketCapLength>=6&&marketCapLength<=8){
             data.marketCapUsd=(Number(data.marketCapUsd)/1000000).toFixed(2)+"M"
         }
-        else if(marketCapLength>=9&&marketCapLength<=11){
+        else if(marketCapLength>=9){
             data.marketCapUsd=(Number(data.marketCapUsd)/1000000000).toFixed(2)+"B"
         }
-        else{
-            data.marketCapUsd=(Number(data.marketCapUsd)/1000000000000).toFixed(2)+"T"
-        }
+
         return data;
     }
 }

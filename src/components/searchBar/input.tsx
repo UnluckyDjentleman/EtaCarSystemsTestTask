@@ -19,7 +19,7 @@ export default function Input() {
         data-testid="search"
         value={search}
         onChange={(e) => setSearchString(e.currentTarget.value)}
-        className="grow w-auto md:mr-8 rounded-xl px-4 py-2 outline-none border"
+        className="grow w-auto rounded-xl px-4 py-2 outline-none border"
         placeholder={"Enter coin name"}
       />
     </>
