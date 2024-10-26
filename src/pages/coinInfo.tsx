@@ -9,7 +9,6 @@ import CoinDescription from "../components/info/coinInfo";
 import { useLocation } from "react-router";
 import ErrorMessage from "../components/error/error";
 import HistoryChart from "../components/history/historyChart";
-import DataAssetsHistory from "../constants/types/dataAssetsHistory";
 
 export default function CoinInfo() {
   const filterHistory = useAppSelector((state) => state.filterHistory);
@@ -33,7 +32,7 @@ export default function CoinInfo() {
               <CoinDescription item={result.coin as Assets} />
             </div>
             <div className="py-4 px-1 mx-auto w-full md:w-[470px]">
-              <HistoryChart data={coinHistory.history as DataAssetsHistory[]} />
+              <HistoryChart data={coinHistory.history??[]} />
               <SelectHistory histories={filterHistory}></SelectHistory>
             </div>
           </div>

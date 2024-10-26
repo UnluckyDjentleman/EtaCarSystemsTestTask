@@ -37,12 +37,12 @@ function MainPage() {
 
   return (
     <div className="mx-auto">
-      <div className='container mx-auto px-2 md:px-0'>
+      <div className="container mx-auto px-2 md:px-0">
         <div className="w-full flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center py-2">
-          <div className={'w-min'}>
+          <div className={"w-min"}>
             <Input />
           </div>
-          <div className={'w-min'}>
+          <div className={"w-min"}>
             <SortBy />
           </div>
         </div>

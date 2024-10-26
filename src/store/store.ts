@@ -8,7 +8,7 @@ export const store = configureStore({
     filter: filterReducer,
     filterHistory: filterHistoryReducer,
     portfolio: portfolioReducer,
-  }
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

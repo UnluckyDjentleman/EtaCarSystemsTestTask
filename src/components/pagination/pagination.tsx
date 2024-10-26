@@ -3,7 +3,6 @@ import { useAppDispatch } from "../../utils/hooks/useRedux";
 import { setPage } from "../../store/reducers/filterReducer";
 import PaginationElement from "../shared/paginationElement";
 
-
 export default function Pagination({
   limit,
   offset,
@@ -22,9 +21,20 @@ export default function Pagination({
     dispatch(setPage(offset - limit));
   }, [dispatch, offset]);
   return (
-    <div className="max-w-[150px] mx-auto mt-6 mb-6 flex flex-row items-center justify-between" data-testid="pg-block">
-          <PaginationElement text='Prev' onClick={onClickPrev} isAbled={offset>0}/>
-          <PaginationElement text='Next' onClick={onClickNext} isAbled={length>0}/>
+    <div
+      className="max-w-[150px] mx-auto mt-6 mb-6 flex flex-row items-center justify-between"
+      data-testid="pg-block"
+    >
+      <PaginationElement
+        text="Prev"
+        onClick={onClickPrev}
+        isAbled={offset > 0}
+      />
+      <PaginationElement
+        text="Next"
+        onClick={onClickNext}
+        isAbled={length > 0}
+      />
     </div>
   );
 }

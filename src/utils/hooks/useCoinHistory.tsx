@@ -17,7 +17,7 @@ export default function useCoinHistory(
     CoinsAPI.GetCoinHistoryById(id, filterHistory)
       .then((data) => {
         setHistory(
-          (data.data).map((el: DataAssetsHistory) => ({
+          data.data.map((el: DataAssetsHistory) => ({
             ...el,
             time:
               new Date(el.time).getHours().toString() +

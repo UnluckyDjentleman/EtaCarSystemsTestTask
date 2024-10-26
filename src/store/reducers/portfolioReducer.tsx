@@ -5,9 +5,7 @@ import AddPortfolio from "../../constants/types/addPortfolio";
 import Assets from "../../constants/types/assets";
 
 function stateInitialize(): Portfolio {
-  const localStore: string | null = localStorage.getItem(
-    'portfolio',
-  );
+  const localStore: string | null = localStorage.getItem("portfolio");
   if (localStore) {
     const coins: AddPortfolio[] = JSON.parse(localStore);
     return {

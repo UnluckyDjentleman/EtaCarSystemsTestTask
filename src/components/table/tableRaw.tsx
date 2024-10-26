@@ -49,13 +49,14 @@ export default function TableRaw({ item }: { item: Assets }) {
       </td>
       <td className="sm:table-cell px-4 py-6 text-center">
         <Button
-          innerText='Add'
-          color='#22c55e'
+          innerText="Add"
+          color="#22c55e"
           onClick={(e) => {
             e.stopPropagation();
             console.log(item);
             viewCoinAddModal(item);
-          }}/>
+          }}
+        />
       </td>
     </tr>
   );

@@ -38,13 +38,11 @@ export default function CoinDescription({ item }: { item: Assets }) {
 
       <div className="min-w-[75%] mx-auto flex flex-row justify-between gap-2">
         <Button
-          onClick={()=>viewCoinAddModal(item)}
+          onClick={() => viewCoinAddModal(item)}
           color="#22c55e"
-          innerText="Add"/>
-        <Button
-          onClick={clickBack}
-          color="#a855f7"
-          innerText="Back"/>
+          innerText="Add"
+        />
+        <Button onClick={clickBack} color="#a855f7" innerText="Back" />
       </div>
 
       <div className="w-full flex flex-col items-center gap-6">

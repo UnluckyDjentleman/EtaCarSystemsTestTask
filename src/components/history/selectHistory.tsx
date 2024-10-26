@@ -12,12 +12,9 @@ export default function SelectHistory({
   const dispatch = useAppDispatch();
   const onSelect = useCallback(
     (x: string) => {
-      const foundElement=HistoryParams.find((el) => el.value.interval === x);
+      const foundElement = HistoryParams.find((el) => el.value.interval === x);
       dispatch(
-        setInterval(
-          foundElement?
-          foundElement.value:HistoryParams[0].value
-        ),
+        setInterval(foundElement ? foundElement.value : HistoryParams[0].value),
       );
     },
     [histories],
