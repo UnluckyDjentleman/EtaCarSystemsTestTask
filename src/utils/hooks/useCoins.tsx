@@ -10,6 +10,8 @@ export default function useCoins(filter: Filter) {
   const [load, setLoad] = useState<boolean | string>();
   const [error, setError] = useState<AxiosError>();
 
+  const elementsOnPage:number=20;
+
   useEffect(() => {
     setLoad("Loading...");
     CoinsAPI.GetCoins(filter)
@@ -18,6 +20,7 @@ export default function useCoins(filter: Filter) {
           case "":
             setCoins(
               data.data
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage))
                 .map((el) => ApiValuesTransformer.fiterZeroValues(el))
                 .map((el) => ApiValuesTransformer.formatCost(el)),
             );
@@ -30,7 +33,8 @@ export default function useCoins(filter: Filter) {
                   (a: Assets, b: Assets) =>
                     parseFloat(b.priceUsd) - parseFloat(a.priceUsd),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
           case "priceasc":
@@ -41,7 +45,8 @@ export default function useCoins(filter: Filter) {
                   (a: Assets, b: Assets) =>
                     parseFloat(a.priceUsd) - parseFloat(b.priceUsd),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
           case "changedesc":
@@ -53,7 +58,8 @@ export default function useCoins(filter: Filter) {
                     parseFloat(b.changePercent24Hr) -
                     parseFloat(a.changePercent24Hr),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
           case "changeasc":
@@ -65,7 +71,8 @@ export default function useCoins(filter: Filter) {
                     parseFloat(a.changePercent24Hr) -
                     parseFloat(b.changePercent24Hr),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
           case "marketcapdesc":
@@ -76,7 +83,8 @@ export default function useCoins(filter: Filter) {
                   (a: Assets, b: Assets) =>
                     parseFloat(b.marketCapUsd) - parseFloat(a.marketCapUsd),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
           case "marketcapasc":
@@ -87,7 +95,8 @@ export default function useCoins(filter: Filter) {
                   (a: Assets, b: Assets) =>
                     parseFloat(a.marketCapUsd) - parseFloat(b.marketCapUsd),
                 )
-                .map((el) => ApiValuesTransformer.formatCost(el)),
+                .map((el) => ApiValuesTransformer.formatCost(el))
+                .slice(filter.offset*elementsOnPage,((filter.offset+1)*elementsOnPage)),
             );
             break;
         }

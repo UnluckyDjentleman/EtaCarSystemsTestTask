@@ -12,7 +12,6 @@ export default class CoinsAPI {
       {
         params: {
           limit: filter.limit,
-          offset: filter.offset,
           search: filter.search,
           ids: filter.ids,
         },
