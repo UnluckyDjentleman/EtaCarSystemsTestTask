@@ -53,7 +53,7 @@ function MainPage() {
           <div className="container mx-auto px-2 md:px-0">
             <Table items={coinsList.current.results}></Table>
             <Pagination
-              limit={defaultCoinFilter.current.limit}
+              limit={20}
               offset={coinFilter.offset}
               length={coinsList.current.results.length}
             ></Pagination>

@@ -14,11 +14,11 @@ export default function Pagination({
 }) {
   const dispatch = useAppDispatch();
   const onClickNext = useCallback(() => {
-    dispatch(setPage(offset + limit));
+    dispatch(setPage(offset + 1));
   }, [dispatch, offset]);
 
   const onClickPrev = useCallback(() => {
-    dispatch(setPage(offset - limit));
+    dispatch(setPage(offset - 1));
   }, [dispatch, offset]);
   return (
     <div

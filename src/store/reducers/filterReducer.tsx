@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Filter from "../../constants/types/filter";
 
 const initialState: Filter = {
-  limit: 20,
+  limit: 2000,
   offset: 0,
   ids: "",
   search: "",
